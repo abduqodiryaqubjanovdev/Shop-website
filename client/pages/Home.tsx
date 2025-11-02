@@ -38,22 +38,54 @@ export default function Home() {
     <div className="min-h-screen bg-background pb-32">
       <NavBar onSearch={setSearchQuery} onAdminClick={() => setAdminLoginOpen(true)} />
 
+      <div className="bg-gradient-to-br from-primary/10 via-accent/5 to-background border-b border-border">
+        <div className="px-4 sm:px-6 py-12 sm:py-16">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
+                  {language === 'uz' ? 'Eng yangi texnologiya' : 'Latest Technology'}
+                </h1>
+                <p className="text-lg text-muted-foreground mb-6">
+                  {language === 'uz'
+                    ? 'Eng yaxshi telefonlar va noutbuklar bir joyda. Sifat va narx bo\'yicha eng yaxshilari toping.'
+                    : 'Find the best phones and laptops all in one place. Quality and value in every product.'}
+                </p>
+                <div className="flex gap-3">
+                  <a
+                    href="#products"
+                    className="px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-all inline-block"
+                  >
+                    {language === 'uz' ? 'Mahsulotlarni ko\'ring' : 'Browse Products'}
+                  </a>
+                </div>
+              </div>
+              <div className="hidden md:flex justify-center">
+                <div className="w-full max-w-sm h-64 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center text-6xl">
+                  📱
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="px-4 sm:px-6 py-6">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+          <div id="products" className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
             <div>
-              <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-2">
+              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-2">
                 {t('allProducts', language)}
-              </h1>
+              </h2>
               <p className="text-muted-foreground">
-                {filteredProducts.length} products found
+                {filteredProducts.length} {language === 'uz' ? 'mahsulot topildi' : 'products found'}
               </p>
             </div>
 
             {isAdmin && (
               <button
                 onClick={() => setShowAddProduct(!showAddProduct)}
-                className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-semibold"
+                className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-semibold hover:shadow-lg"
               >
                 <Plus size={20} />
                 {t('addProduct', language)}
