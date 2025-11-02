@@ -1,14 +1,17 @@
-import React from 'react';
-import { NavBar } from '@/components/NavBar';
-import { BottomNav } from '@/components/BottomNav';
-import { useApp } from '@/context/AppContext';
-import { t } from '@/i18n/translations';
-import { ShoppingCart, Minus, Plus, Trash2 } from 'lucide-react';
+import React from "react";
+import { NavBar } from "@/components/NavBar";
+import { BottomNav } from "@/components/BottomNav";
+import { useApp } from "@/context/AppContext";
+import { t } from "@/i18n/translations";
+import { ShoppingCart, Minus, Plus, Trash2 } from "lucide-react";
 
 export default function Cart() {
   const { language, cart, removeFromCart, updateCartQuantity } = useApp();
 
-  const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const subtotal = cart.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0,
+  );
   const tax = subtotal * 0.1;
   const total = subtotal + tax;
 
@@ -21,15 +24,18 @@ export default function Cart() {
           <div className="flex items-center gap-3 mb-8">
             <ShoppingCart size={32} className="text-primary" />
             <h1 className="text-3xl sm:text-4xl font-bold text-foreground">
-              {t('cart', language)}
+              {t("cart", language)}
             </h1>
           </div>
 
           {cart.length === 0 ? (
             <div className="text-center py-12 bg-card rounded-lg border border-border">
-              <ShoppingCart size={48} className="mx-auto text-muted-foreground mb-4 opacity-50" />
+              <ShoppingCart
+                size={48}
+                className="mx-auto text-muted-foreground mb-4 opacity-50"
+              />
               <p className="text-lg text-muted-foreground mb-2">
-                {t('emptyCart', language)}
+                {t("emptyCart", language)}
               </p>
             </div>
           ) : (
@@ -54,7 +60,9 @@ export default function Cart() {
                       </p>
                       <div className="flex items-center gap-2">
                         <button
-                          onClick={() => updateCartQuantity(item.id, item.quantity - 1)}
+                          onClick={() =>
+                            updateCartQuantity(item.id, item.quantity - 1)
+                          }
                           className="p-1 hover:bg-secondary rounded transition-colors"
                         >
                           <Minus size={18} />
@@ -63,12 +71,17 @@ export default function Cart() {
                           type="number"
                           value={item.quantity}
                           onChange={(e) =>
-                            updateCartQuantity(item.id, parseInt(e.target.value) || 1)
+                            updateCartQuantity(
+                              item.id,
+                              parseInt(e.target.value) || 1,
+                            )
                           }
                           className="w-12 text-center border border-border rounded px-2 py-1 bg-background text-foreground"
                         />
                         <button
-                          onClick={() => updateCartQuantity(item.id, item.quantity + 1)}
+                          onClick={() =>
+                            updateCartQuantity(item.id, item.quantity + 1)
+                          }
                           className="p-1 hover:bg-secondary rounded transition-colors"
                         >
                           <Plus size={18} />
@@ -93,7 +106,7 @@ export default function Cart() {
               <div className="lg:col-span-1">
                 <div className="bg-card border border-border rounded-lg p-6 sticky top-20">
                   <h2 className="text-xl font-bold text-foreground mb-4">
-                    {t('total', language)}
+                    {t("total", language)}
                   </h2>
                   <div className="space-y-2 mb-4 pb-4 border-b border-border">
                     <div className="flex justify-between text-foreground">
@@ -110,7 +123,7 @@ export default function Cart() {
                     <span className="text-primary">${total.toFixed(2)}</span>
                   </div>
                   <button className="w-full bg-primary text-primary-foreground font-semibold py-3 rounded-lg hover:bg-primary/90 transition-colors">
-                    {t('checkout', language)}
+                    {t("checkout", language)}
                   </button>
                 </div>
               </div>

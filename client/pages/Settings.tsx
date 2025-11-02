@@ -1,9 +1,9 @@
-import React from 'react';
-import { NavBar } from '@/components/NavBar';
-import { BottomNav } from '@/components/BottomNav';
-import { useApp } from '@/context/AppContext';
-import { t } from '@/i18n/translations';
-import { Settings as SettingsIcon, Sun, Moon, Globe } from 'lucide-react';
+import React from "react";
+import { NavBar } from "@/components/NavBar";
+import { BottomNav } from "@/components/BottomNav";
+import { useApp } from "@/context/AppContext";
+import { t } from "@/i18n/translations";
+import { Settings as SettingsIcon, Sun, Moon, Globe } from "lucide-react";
 
 export default function Settings() {
   const { language, setLanguage, theme, setTheme } = useApp();
@@ -17,7 +17,7 @@ export default function Settings() {
           <div className="flex items-center gap-3 mb-8">
             <SettingsIcon size={32} className="text-primary" />
             <h1 className="text-3xl sm:text-4xl font-bold text-foreground">
-              {t('settings', language)}
+              {t("settings", language)}
             </h1>
           </div>
 
@@ -26,36 +26,36 @@ export default function Settings() {
               <div className="flex items-center gap-3 mb-4">
                 <Sun size={24} className="text-primary" />
                 <h2 className="text-xl font-bold text-foreground">
-                  {language === 'uz' ? 'Qorong\'i rejim' : 'Dark Mode'}
+                  {language === "uz" ? "Qorong'i rejim" : "Dark Mode"}
                 </h2>
               </div>
               <p className="text-muted-foreground mb-4">
-                {language === 'uz'
-                  ? 'Qorong\'i va yorug\' rejimlari o\'rtasida o\'zgarish qiling'
-                  : 'Switch between dark and light modes'}
+                {language === "uz"
+                  ? "Qorong'i va yorug' rejimlari o'rtasida o'zgarish qiling"
+                  : "Switch between dark and light modes"}
               </p>
               <div className="flex gap-3">
                 <button
-                  onClick={() => setTheme('light')}
+                  onClick={() => setTheme("light")}
                   className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-colors ${
-                    theme === 'light'
-                      ? 'bg-primary text-primary-foreground'
-                      : 'bg-secondary text-secondary-foreground hover:bg-accent'
+                    theme === "light"
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-secondary text-secondary-foreground hover:bg-accent"
                   }`}
                 >
                   <Sun size={20} />
-                  {language === 'uz' ? 'Yorug\'' : 'Light'}
+                  {language === "uz" ? "Yorug'" : "Light"}
                 </button>
                 <button
-                  onClick={() => setTheme('dark')}
+                  onClick={() => setTheme("dark")}
                   className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-colors ${
-                    theme === 'dark'
-                      ? 'bg-primary text-primary-foreground'
-                      : 'bg-secondary text-secondary-foreground hover:bg-accent'
+                    theme === "dark"
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-secondary text-secondary-foreground hover:bg-accent"
                   }`}
                 >
                   <Moon size={20} />
-                  {language === 'uz' ? 'Qorong\'i' : 'Dark'}
+                  {language === "uz" ? "Qorong'i" : "Dark"}
                 </button>
               </div>
             </div>
@@ -64,32 +64,32 @@ export default function Settings() {
               <div className="flex items-center gap-3 mb-4">
                 <Globe size={24} className="text-primary" />
                 <h2 className="text-xl font-bold text-foreground">
-                  {t('language', language)}
+                  {t("language", language)}
                 </h2>
               </div>
               <p className="text-muted-foreground mb-4">
-                {language === 'uz'
-                  ? 'Ilovani foydalanish tilini tanlang'
-                  : 'Choose your preferred language'}
+                {language === "uz"
+                  ? "Ilovani foydalanish tilini tanlang"
+                  : "Choose your preferred language"}
               </p>
               <div className="flex gap-3">
                 <button
-                  onClick={() => setLanguage('uz')}
+                  onClick={() => setLanguage("uz")}
                   className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-colors ${
-                    language === 'uz'
-                      ? 'bg-primary text-primary-foreground'
-                      : 'bg-secondary text-secondary-foreground hover:bg-accent'
+                    language === "uz"
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-secondary text-secondary-foreground hover:bg-accent"
                   }`}
                 >
                   <span className="text-lg">🇺🇿</span>
                   Uzbek (O\'zbek)
                 </button>
                 <button
-                  onClick={() => setLanguage('en')}
+                  onClick={() => setLanguage("en")}
                   className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-colors ${
-                    language === 'en'
-                      ? 'bg-primary text-primary-foreground'
-                      : 'bg-secondary text-secondary-foreground hover:bg-accent'
+                    language === "en"
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-secondary text-secondary-foreground hover:bg-accent"
                   }`}
                 >
                   <span className="text-lg">🇬🇧</span>
@@ -100,25 +100,25 @@ export default function Settings() {
 
             <div className="bg-card border border-border rounded-lg p-6">
               <h2 className="text-xl font-bold text-foreground mb-4">
-                {language === 'uz' ? 'Ilova haqida' : 'About'}
+                {language === "uz" ? "Ilova haqida" : "About"}
               </h2>
               <div className="space-y-2 text-muted-foreground">
                 <p>
                   <span className="font-semibold text-foreground">
-                    {language === 'uz' ? 'Versiya:' : 'Version:'}
-                  </span>{' '}
+                    {language === "uz" ? "Versiya:" : "Version:"}
+                  </span>{" "}
                   1.0.0
                 </p>
                 <p>
                   <span className="font-semibold text-foreground">
-                    {language === 'uz' ? 'Ishlab chiqaruvchi:' : 'Developer:'}
-                  </span>{' '}
+                    {language === "uz" ? "Ishlab chiqaruvchi:" : "Developer:"}
+                  </span>{" "}
                   TechHub Team
                 </p>
                 <p className="text-sm pt-4">
-                  {language === 'uz'
-                    ? 'TechHub - eng yangi telefonlar va noutbuklar uchun raqamli bozor'
-                    : 'TechHub - Your go-to platform for the latest phones and laptops'}
+                  {language === "uz"
+                    ? "TechHub - eng yangi telefonlar va noutbuklar uchun raqamli bozor"
+                    : "TechHub - Your go-to platform for the latest phones and laptops"}
                 </p>
               </div>
             </div>

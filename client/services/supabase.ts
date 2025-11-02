@@ -5,8 +5,8 @@ export const initializeSupabase = () => {
   // Supabase initialization will go here
   // For now, we're using mock data from client/data/mockProducts.ts
   // Once Supabase is connected, replace this with actual Supabase client
-  
-  console.log('Supabase client initialization placeholder');
+
+  console.log("Supabase client initialization placeholder");
 };
 
 // Types for Supabase operations
@@ -15,7 +15,7 @@ export type SupabaseProduct = {
   name: string;
   description: string;
   price: number;
-  category: 'phone' | 'laptop';
+  category: "phone" | "laptop";
   image: string;
   rating: number;
   reviews: number;
@@ -32,24 +32,24 @@ export type SupabaseUser = {
 export const supabaseAPI = {
   // Products
   getProducts: async () => {
-    console.log('getProducts called - awaiting Supabase setup');
+    console.log("getProducts called - awaiting Supabase setup");
     return [];
   },
-  
-  addProduct: async (product: Omit<SupabaseProduct, 'id' | 'created_at'>) => {
-    console.log('addProduct called with:', product);
+
+  addProduct: async (product: Omit<SupabaseProduct, "id" | "created_at">) => {
+    console.log("addProduct called with:", product);
   },
-  
+
   deleteProduct: async (productId: string) => {
-    console.log('deleteProduct called for:', productId);
+    console.log("deleteProduct called for:", productId);
   },
-  
+
   // Auth
   loginAdmin: async (email: string, password: string) => {
-    console.log('loginAdmin called with email:', email);
+    console.log("loginAdmin called with email:", email);
   },
-  
+
   logoutAdmin: async () => {
-    console.log('logoutAdmin called');
+    console.log("logoutAdmin called");
   },
 };

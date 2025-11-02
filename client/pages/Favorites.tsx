@@ -1,11 +1,11 @@
-import React from 'react';
-import { NavBar } from '@/components/NavBar';
-import { BottomNav } from '@/components/BottomNav';
-import { ProductCard } from '@/components/ProductCard';
-import { useApp } from '@/context/AppContext';
-import { t } from '@/i18n/translations';
-import { mockProducts } from '@/data/mockProducts';
-import { Heart } from 'lucide-react';
+import React from "react";
+import { NavBar } from "@/components/NavBar";
+import { BottomNav } from "@/components/BottomNav";
+import { ProductCard } from "@/components/ProductCard";
+import { useApp } from "@/context/AppContext";
+import { t } from "@/i18n/translations";
+import { mockProducts } from "@/data/mockProducts";
+import { Heart } from "lucide-react";
 
 export default function Favorites() {
   const { language, favorites } = useApp();
@@ -22,7 +22,7 @@ export default function Favorites() {
             <div className="flex items-center gap-3 mb-2">
               <Heart size={32} className="text-red-500" fill="currentColor" />
               <h1 className="text-3xl sm:text-4xl font-bold text-foreground">
-                {t('favorites', language)}
+                {t("favorites", language)}
               </h1>
             </div>
             <p className="text-muted-foreground">
@@ -32,9 +32,12 @@ export default function Favorites() {
 
           {favoriteProducts.length === 0 ? (
             <div className="text-center py-12 bg-card rounded-lg border border-border">
-              <Heart size={48} className="mx-auto text-muted-foreground mb-4 opacity-50" />
+              <Heart
+                size={48}
+                className="mx-auto text-muted-foreground mb-4 opacity-50"
+              />
               <p className="text-lg text-muted-foreground mb-2">
-                {t('emptyFavorites', language)}
+                {t("emptyFavorites", language)}
               </p>
               <p className="text-sm text-muted-foreground">
                 Products you favorite will appear here.
