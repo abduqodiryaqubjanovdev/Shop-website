@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { NavBar } from "@/components/NavBar";
 import { BottomNav } from "@/components/BottomNav";
 import { ProductCard } from "@/components/ProductCard";
 import { useApp } from "@/context/AppContext";
 import { t } from "@/i18n/translations";
-import { mockProducts } from "@/data/mockProducts";
 import { Heart } from "lucide-react";
 
 export default function Favorites() {
-  const { language, favorites } = useApp();
+  const { language, favorites, products } = useApp();
 
-  const favoriteProducts = mockProducts.filter((p) => favorites.has(p.id));
+  const favoriteProducts = useMemo(
+    () => products.filter((p) => favorites.has(p.id)),
+    [products, favorites]
+  );
 
   return (
     <div className="min-h-screen bg-background pb-32">

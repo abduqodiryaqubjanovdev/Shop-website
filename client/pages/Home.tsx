@@ -3,13 +3,13 @@ import { NavBar } from "@/components/NavBar";
 import { BottomNav } from "@/components/BottomNav";
 import { ProductCard } from "@/components/ProductCard";
 import { AdminLoginModal } from "@/components/AdminLoginModal";
+import { AdminPanel } from "@/components/AdminPanel";
 import { useApp } from "@/context/AppContext";
 import { t } from "@/i18n/translations";
-import { mockProducts } from "@/data/mockProducts";
 import { Plus } from "lucide-react";
 
 export default function Home() {
-  const { language, isAdmin } = useApp();
+  const { language, isAdmin, products } = useApp();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<
     "all" | "phone" | "laptop"
@@ -18,7 +18,7 @@ export default function Home() {
   const [showAddProduct, setShowAddProduct] = useState(false);
 
   const filteredProducts = useMemo(() => {
-    let result = mockProducts;
+    let result = products;
 
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase();
@@ -34,7 +34,7 @@ export default function Home() {
     }
 
     return result;
-  }, [searchQuery, selectedCategory]);
+  }, [searchQuery, selectedCategory, products]);
 
   return (
     <div className="min-h-screen bg-background pb-32">
@@ -128,13 +128,7 @@ export default function Home() {
 
           {showAddProduct && isAdmin && (
             <div className="bg-card border border-border rounded-lg p-6 mb-8">
-              <h2 className="text-xl font-bold mb-4 text-foreground">
-                {t("addProduct", language)}
-              </h2>
-              <p className="text-muted-foreground">
-                Admin product management will be available when Supabase is
-                connected.
-              </p>
+              <AdminPanel />
             </div>
           )}
 

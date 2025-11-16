@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { Home, Heart, ShoppingCart, Settings } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useApp } from "@/context/AppContext";
@@ -8,14 +8,20 @@ export const BottomNav: React.FC = () => {
   const { language, cart } = useApp();
   const location = useLocation();
 
-  const navItems = [
-    { path: "/", label: t("home", language), icon: Home },
-    { path: "/favorites", label: t("favorites", language), icon: Heart },
-    { path: "/cart", label: t("cart", language), icon: ShoppingCart },
-    { path: "/settings", label: t("settings", language), icon: Settings },
-  ];
+  const navItems = useMemo(
+    () => [
+      { path: "/", label: t("home", language), icon: Home },
+      { path: "/favorites", label: t("favorites", language), icon: Heart },
+      { path: "/cart", label: t("cart", language), icon: ShoppingCart },
+      { path: "/settings", label: t("settings", language), icon: Settings },
+    ],
+    [language]
+  );
 
-  const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const cartCount = useMemo(
+    () => cart.reduce((sum, item) => sum + item.quantity, 0),
+    [cart]
+  );
 
   return (
     <div className="fixed bottom-0 left-0 right-0 bg-card border-t border-border shadow-lg">

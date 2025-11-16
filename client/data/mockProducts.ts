@@ -7,8 +7,7 @@ export const mockProducts: Product[] = [
     description: "Latest flagship smartphone with advanced camera system",
     price: 999,
     category: "phone",
-    image:
-      "https://images.unsplash.com/photo-1511707267537-b85faf00021e?w=400&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1616410011236-7a42121dd981", // iPhone 15 Pro
     rating: 4.8,
     reviews: 2543,
   },
@@ -18,8 +17,7 @@ export const mockProducts: Product[] = [
     description: "Premium Android phone with AI features",
     price: 899,
     category: "phone",
-    image:
-      "https://images.unsplash.com/photo-1520394881605-eab92c02f954?w=400&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1721864429288-f77b22fdc9ea", // Samsung Galaxy
     rating: 4.7,
     reviews: 1892,
   },
@@ -29,8 +27,7 @@ export const mockProducts: Product[] = [
     description: "Google flagship with best-in-class AI photography",
     price: 799,
     category: "phone",
-    image:
-      "https://images.unsplash.com/photo-1505228395891-9a51e7e86e81?w=400&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1691449808501-f9c5a2030b63", // Google Pixel 8
     rating: 4.6,
     reviews: 1456,
   },
@@ -40,8 +37,7 @@ export const mockProducts: Product[] = [
     description: "Powerful laptop for professionals with M3 Max chip",
     price: 2499,
     category: "laptop",
-    image:
-      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8", // MacBook Pro
     rating: 4.9,
     reviews: 3210,
   },
@@ -51,8 +47,7 @@ export const mockProducts: Product[] = [
     description: "Premium Windows laptop with stunning OLED display",
     price: 1799,
     category: "laptop",
-    image:
-      "https://images.unsplash.com/photo-1588872657840-790ff3bde498?w=400&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1575320854760-bfffc3550640", // Dell XPS
     rating: 4.7,
     reviews: 2108,
   },
@@ -62,31 +57,28 @@ export const mockProducts: Product[] = [
     description: "Business laptop with excellent keyboard and build quality",
     price: 1299,
     category: "laptop",
-    image:
-      "https://images.unsplash.com/photo-1609034227505-5876f6aa4e90?w=400&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1611078489935-0cb964de46d6", // Lenovo ThinkPad
     rating: 4.5,
     reviews: 1734,
   },
   {
     id: "7",
-    name: "OnePlus 12",
-    description: "Fast and smooth Android phone with clean UI",
-    price: 649,
+    name: "Xiaomi 17 Pro Max",
+    description: "Ultra-flagship smartphone, with an excellent camera and a powerful processor.",
+    price: 799,
     category: "phone",
-    image:
-      "https://images.unsplash.com/photo-1516321318423-f06f70be7cb9?w=400&h=400&fit=crop",
-    rating: 4.5,
+    image: "https://i02.appmifile.com/261_operatorx_operatorx_uploadTiptapImage/25/09/2025/782a73ef33d54f6149350a76307da9f2.jpg",
+    rating: 4.8,
     reviews: 987,
   },
   {
     id: "8",
-    name: "ASUS VivoBook 14",
-    description: "Lightweight laptop perfect for students and travelers",
-    price: 599,
+    name: "ASUS ROG Strix Scar 18(2025)",
+    description: "An ultra-premium 18 gaming laptop with a powerful processor and RTX graphics.",
+    price: 2699,
     category: "laptop",
-    image:
-      "https://images.unsplash.com/photo-1593642632505-e0f3afd12d67?w=400&h=400&fit=crop",
-    rating: 4.3,
-    reviews: 1245,
+    image: "https://dlcdnwebimgs.asus.com/files/media/982b43f2-03f0-4780-b552-cf2a58d515bf/v1/images/m-kv_1.webp",
+    rating: 4.9,
+    reviews: 874,
   },
 ];

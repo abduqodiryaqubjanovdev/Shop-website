@@ -10,7 +10,7 @@ interface NavBarProps {
 }
 
 export const NavBar: React.FC<NavBarProps> = ({ onSearch, onAdminClick }) => {
-  const { language, isAdmin, setIsAdmin } = useApp();
+  const { language, isAdmin, setIsAdmin, setUser } = useApp();
   const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
 
@@ -21,6 +21,7 @@ export const NavBar: React.FC<NavBarProps> = ({ onSearch, onAdminClick }) => {
 
   const handleLogout = () => {
     setIsAdmin(false);
+    setUser(null);
     navigate("/");
   };
 

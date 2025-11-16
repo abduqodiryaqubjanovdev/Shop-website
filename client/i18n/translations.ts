@@ -3,7 +3,7 @@ import { Language } from "@/types";
 export const translations: Record<Language, Record<string, string>> = {
   uz: {
     home: "Asosiy",
-    favorites: "Sevimliler",
+    favorites: "Sevimlilar",
     cart: "Savat",
     settings: "Sozlamalar",
     search: "Qidirish...",
@@ -38,7 +38,7 @@ export const translations: Record<Language, Record<string, string>> = {
     checkout: "Sotib olish",
     adminLogin: "Admin kirish",
     emptyCart: "Savatingiz bo'sh. Mahsulotlarni qo'shing!",
-    emptyFavorites: "Sevimlilaring bo'sh. Mahsulotlar shu erda paydo bo'ladi!",
+    emptyFavorites: "Sevimlilaringiz bo'sh. Mahsulotlar shu erda paydo bo'ladi!",
   },
   en: {
     home: "Home",

@@ -8,7 +8,7 @@ interface ProductCardProps {
   product: Product;
 }
 
-export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+export const ProductCard: React.FC<ProductCardProps> = React.memo(({ product }) => {
   const { favorites, toggleFavorite, addToCart, language } = useApp();
   const isFavorite = favorites.has(product.id);
 
@@ -73,4 +73,4 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       </div>
     </div>
   );
-};
+});
